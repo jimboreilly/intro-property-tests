@@ -12,7 +12,7 @@ This project was initialized using the dotnet CLI and can be easily built/tested
 
 Open a terminal in the directory of the `.sln` file and run the following to build or test
 
-``` sh
+```
 dotnet restore
 dotnet build
 dotnet test
@@ -35,9 +35,9 @@ dotnet test
   `(x + y) + z = x + (y + z)`
 
 * Identity
-  * 	Any number added with 0 is that original number
+  * Any number added with 0 is that original number
   	
-  	`x + 0 = x`
+    `x + 0 = x`
   	
   * Any number multiplied with 1 is that original number
 
