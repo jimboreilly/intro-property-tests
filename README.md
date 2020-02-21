@@ -104,12 +104,12 @@ public static FizzBuzz() {
 }
 ```
 
-Well have to generate test data each time we run the test suite in a way that the generated cases are different each time and that the total number of cases is high enough to be confident that its not just a particular set cases that works, but all of them.
+We will have to generate test data each time we run the test suite in a way that the generated cases are different each time and that the total number of cases is high enough to be confident that its not just a particular set cases that works, but all of them.
 
 ```csharp
 [Test]
 public void AddingTwoNumbersAsExpected([Random(10)] int x, [Random(10)] int y) {
-	var expected = x + y;
+    var expected = x + y;
     Assert.AreEqual(expected, x.Add(y));
 }
 ```
@@ -118,7 +118,7 @@ Using NUnit's random input data feature, we've quickly expanded our test cases t
 
 ### Onto Properties
 
-Addition and Multiplication make great examples for property-based testing because the properties that define their unique behavior have simple proofs that you have likely seen before. Well start by defining and testing the properties that they share in common: the Associative and Commutative properties.
+Addition and Multiplication make great examples for property-based testing because the properties that define their unique behavior have simple proofs that you have likely seen before. We can start by defining and testing the properties that they share in common: the Associative and Commutative properties.
 
 FsCheck is a .NET testing utility that will allow us to define the property of a function as a specification and then use a large number of randomly generated test cases to try and prove that property false. The specifications written for FsCheck tests will clearly define the unique expected behavior of `Add` and `Multiply` in better detail than input/output pairs by being examples of the concrete laws that apply over all cases (or cases within optional specified constraints, such as a function `Division` being undefined for 0). Starting first with the Commutative property of addition, we'll define a function that returns a `bool` and implements the property.
 
@@ -135,14 +135,14 @@ This defines the Commutative property of `x + y = y + z` as a function that take
 ```    csharp
 [Test]
 public void AdditionIsAssociative() {
-	Func<int, int, int, bool> associativeProperty = (x, y, z) 
+    Func<int, int, int, bool> associativeProperty = (x, y, z) 
     	=> x.Add(y).Add(z).Equals(z.Add(y).Add(x));
     Prop.ForAll(associativeProperty).QuickCheck();
 }
 
 [Test]
 public void IdentityOfAdditionIsPlus0() {
-	Func<int, bool> additiveIdentity = x => x.Add(0).Equals(x);
+    Func<int, bool> additiveIdentity = x => x.Add(0).Equals(x);
     Prop.ForAll(additiveIdentity).QuickCheck();
 }
 ```
@@ -159,14 +159,14 @@ public void MultiplicationIsCommutative() {
 
 [Test]
 public void MultiplicationIsAssociative() {
-	Func<int, int, int, bool> associativeProperty = (x, y, z) 
+    Func<int, int, int, bool> associativeProperty = (x, y, z) 
     	=> x.Multiply(y).Multiply(z).Equals(z.Multiply(y).Multiply(x));
     Prop.ForAll(commutativeProperty).QuickCheck();
 }
 
 [Test]
 public void IdentityOfMultplicationIsTimes1() {
-	Func<int, bool> multiplicativeIdentity = x => x.Multiply(1).Equals(x);
+    Func<int, bool> multiplicativeIdentity = x => x.Multiply(1).Equals(x);
     Prop.ForAll(multiplicativeIdentity).QuickCheck();
 }
 ```
