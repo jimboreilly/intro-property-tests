@@ -13,6 +13,7 @@ This project was initialized using the dotnet CLI and can be easily built/tested
 Open a terminal in the directory of the `.sln` file and run the following to build or test
 
 ``` sh
+dotnet restore
 dotnet build
 dotnet test
 ```
