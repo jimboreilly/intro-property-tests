@@ -18,50 +18,50 @@ namespace Arithmetic.Spec
         [Test]
         public void AdditionIsCommutative()
         {
-            Func<int, int, bool> commutativePropertyOfAddition = (x, y) => x.Add(y).Equals(y.Add(x));
-            Prop.ForAll(commutativePropertyOfAddition).QuickCheck();
+            Func<int, int, bool> commutativeProperty = (x, y) => x.Add(y).Equals(y.Add(x));
+            Prop.ForAll(commutativeProperty).QuickCheck();
         }
 
         [Test]
         public void AdditionIsAssociative()
         {
-            Func<int, int, int, bool> associativePropertyOfAddition = (x, y, z) => x.Add(y).Add(z).Equals(z.Add(y).Add(x));
-            Prop.ForAll(associativePropertyOfAddition).QuickCheck();
+            Func<int, int, int, bool> associativeProperty = (x, y, z) => x.Add(y).Add(z).Equals(z.Add(y).Add(x));
+            Prop.ForAll(associativeProperty).QuickCheck();
         }
 
         [Test]
         public void IdentityOfAdditionIsPlus0()
         {
-            Func<int, bool> identityOfAddition = x => x.Add(0).Equals(x);
-            Prop.ForAll(identityOfAddition).QuickCheck();
+            Func<int, bool> additiveIdentity = x => x.Add(0).Equals(x);
+            Prop.ForAll(additiveIdentity).QuickCheck();
         }
 
         [Test]
-        public void MultiplcationIsCommutative()
+        public void MultiplicationIsCommutative()
         {
-            Func<int, int, bool> commutativePropertyOfAddition = (x, y) => x.Add(y).Equals(y.Add(x));
-            Prop.ForAll(commutativePropertyOfAddition).QuickCheck();
+            Func<int, int, bool> commutativeProperty = (x, y) => x.Multiply(y).Equals(y.Multiply(x));
+            Prop.ForAll(commutativeProperty).QuickCheck();
         }
 
         [Test]
-        public void MultiplcationIsAssociative()
+        public void MultiplicationIsAssociative()
         {
-            Func<int, int, int, bool> associativePropertyOfMultiplication = (x, y, z) => x.Multiply(y).Multiply(z).Equals(z.Multiply(y).Multiply(x));
-            Prop.ForAll(associativePropertyOfMultiplication).QuickCheck();
+            Func<int, int, int, bool> associativeProperty = (x, y, z) => x.Multiply(y).Multiply(z).Equals(z.Multiply(y).Multiply(x));
+            Prop.ForAll(associativeProperty).QuickCheck();
         }
 
         [Test]
-        public void IdentityOfMultiplicationIsTimes1()
+        public void IdentityOfMultplicationIsTimes1()
         {
-            Func<int, bool> identityOfMultiplication = x => x.Multiply(1).Equals(x);
-            Prop.ForAll(identityOfMultiplication).QuickCheck();
+            Func<int, bool> multiplicativeIdentity = x => x.Multiply(1).Equals(x);
+            Prop.ForAll(multiplicativeIdentity).QuickCheck();
         }
 
         [Test]
-        public void DistributiveProperty()
+        public void MultiplicationIsDistributiveOverAddition()
         {
-            Func<int, int, int, bool> distributivePropertyOfAddition = (x, y, z) => x.Multiply(y.Add(z)).Equals(x.Multiply(y).Add(x.Multiply(z)));
-            Prop.ForAll(distributivePropertyOfAddition).QuickCheck();
+            Func<int, int, int, bool> distributiveProperty = (x, y, z) => x.Multiply(y.Add(z)).Equals(x.Multiply(y).Add(x.Multiply(z)));
+            Prop.ForAll(distributiveProperty).QuickCheck();
         }
 
     }
