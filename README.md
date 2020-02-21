@@ -75,7 +75,7 @@ public void TenAndTenIsTwenty() {
 }
 ```
 
-While true that we gain additional confidence with this extra case, how much confidence did we _really_ gain? We don't know without inspecting the source if the actually implementation for `Add` surmised to something like: 
+While true that we gain additional confidence with this extra case, how much confidence did we _really_ gain? We don't know without inspecting the source if the actual implementation for `Add` surmised to something like: 
 
 ```csharp
 public static int Add(this int x, int y) {
