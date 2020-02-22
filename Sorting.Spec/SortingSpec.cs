@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Sorting;
+using System.Linq;
 
 namespace Sorting.Spec
 {
@@ -10,8 +11,12 @@ namespace Sorting.Spec
         public void Test1()
         {
             var backwardsArray = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            var array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Assert.AreEqual(array, backwardsArray.SlowSort());
+            var sortedList = backwardsArray.SlowSort().ToList();
+            var pairWise = sortedList.Zip(sortedList.Skip(1));
+            foreach (var pair in pairWise)
+            {
+                Assert.IsTrue(pair.First <= pair.Second);
+            }
         }
     }
 }

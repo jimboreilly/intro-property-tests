@@ -15,6 +15,7 @@ namespace Arithmetic.Spec
         {
             return Enumerable.Range(0, n).Select(x => r.Next());
         }
+
         [Test]
         public void AdditionIsCommutative()
         {
