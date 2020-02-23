@@ -1,6 +1,9 @@
 using NUnit.Framework;
 using Sorting;
+using System;
 using System.Linq;
+using FsCheck;
+
 
 namespace Sorting.Spec
 {
@@ -8,15 +11,15 @@ namespace Sorting.Spec
     {
 
         [Test]
-        public void Test1()
+        public void SortedListIsOrderedAscending()
         {
-            var backwardsArray = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            var sortedList = backwardsArray.SlowSort().ToList();
-            var pairWise = sortedList.Zip(sortedList.Skip(1));
-            foreach (var pair in pairWise)
+            Func<int[], bool> leftNeverGreaterThanRight = array =>
             {
-                Assert.IsTrue(pair.First <= pair.Second);
-            }
+                var sorted = array.SlowSort().ToList();
+                return sorted.Zip(sorted.Skip(1)).All(pair => pair.First <= pair.Second);
+            };
+
+            Prop.ForAll(leftNeverGreaterThanRight).QuickCheckThrowOnFailure();
         }
     }
 }
