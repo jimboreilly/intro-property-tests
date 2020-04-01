@@ -7,6 +7,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Arithmetic", "Arithmetic\Ar
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Arithmetic.Spec", "Arithmetic.Spec\Arithmetic.Spec.fsproj", "{18CCCFB5-FE11-44C6-B8D6-8009F56E9452}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sorting.Spec", "Sorting.Spec\Sorting.Spec.fsproj", "{3A32A139-C531-4BF6-AC03-3F6C38D818CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{18CCCFB5-FE11-44C6-B8D6-8009F56E9452}.Release|x64.Build.0 = Release|Any CPU
 		{18CCCFB5-FE11-44C6-B8D6-8009F56E9452}.Release|x86.ActiveCfg = Release|Any CPU
 		{18CCCFB5-FE11-44C6-B8D6-8009F56E9452}.Release|x86.Build.0 = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|x64.Build.0 = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{3A32A139-C531-4BF6-AC03-3F6C38D818CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
