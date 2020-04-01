@@ -42,3 +42,9 @@ let ``the multiplicative identity is 1``() =
     let identity a = multiply a 1 = a
 
     Check.QuickThrowOnFailure identity
+
+[<Test>]
+let ``multiplication is distributive over addition``() =
+    let distributiveProperty a b c = multiply (add a b) c = add (multiply a c) (multiply b c)
+
+    Check.QuickThrowOnFailure distributiveProperty
