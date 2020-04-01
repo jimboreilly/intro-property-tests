@@ -1,7 +1,6 @@
 ﻿module ArithmeticSpec
 
 open NUnit.Framework
-open FsUnit
 open FsCheck
 
 open Example.Arithmetic
