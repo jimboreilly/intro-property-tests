@@ -2,7 +2,7 @@
 
 The motivation of this mini project is to demonstrate the value of property-based testing over traditional input/output pair testing. Two simple examples of functions that have well defined properties are chosen: Addition and Multiplication. Using FsCheck, I prove the commutative, associative and identity properties of each function as well as the distributive property which uses both.
 
-All examples are implemented in F# in the `fsharp` directory, and in my opinion, are much simpler to read by forgoing all of the explicit typing
+All examples are additionally implemented in F#, in the `fsharp` directory, and in my opinion are much simpler to read by forgoing all of the explicit typing. Consider a peek even if you have never looked at ML based languages before or compare the two side-by-side to decide which you prefer.
 
 ## How to run
 
