@@ -5,21 +5,21 @@ open FsCheck
 
 [<Test>]
 let ``a sorted list is same size as original``() =
-    let sizeIsMaintained (x: int list) =
+    let sizeIsMaintained (aList: int list) =
         let left =
-            x
+            aList
             |> Seq.sort
             |> Seq.length
 
-        let right = x |> Seq.length
+        let right = aList |> Seq.length
         left = right
 
     Check.QuickThrowOnFailure sizeIsMaintained
 
 [<Test>]
 let ``a sorted list is ordered ascending pairs``() =
-    let orderedPairs (x: int list) =
-        x
+    let orderedPairs (aList: int list) =
+        aList
         |> Seq.sort
         |> Seq.pairwise
         |> Seq.forall (fun (a, b) -> a <= b)
