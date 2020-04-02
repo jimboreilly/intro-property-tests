@@ -8,10 +8,10 @@ let ``a sorted list is same size as original``() =
     let sizeIsMaintained (aList: int list) =
         let left =
             aList
-            |> Seq.sort
-            |> Seq.length
+            |> List.sort
+            |> List.length
 
-        let right = aList |> Seq.length
+        let right = aList |> List.length
         left = right
 
     Check.QuickThrowOnFailure sizeIsMaintained
@@ -20,9 +20,9 @@ let ``a sorted list is same size as original``() =
 let ``a sorted list is ordered ascending pairs``() =
     let orderedPairs (aList: int list) =
         aList
-        |> Seq.sort
-        |> Seq.pairwise
-        |> Seq.forall (fun (a, b) -> a <= b)
+        |> List.sort
+        |> List.pairwise
+        |> List.forall (fun (a, b) -> a <= b)
 
     Check.QuickThrowOnFailure orderedPairs
 
