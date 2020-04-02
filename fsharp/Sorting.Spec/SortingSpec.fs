@@ -15,3 +15,13 @@ let ``a sorted list is same size as original``() =
         left = right
 
     Check.QuickThrowOnFailure sizeIsMaintained
+
+[<Test>]
+let ``a sorted list is ordered ascending pairs``() =
+    let orderedPairs (x: int list) =
+        x
+        |> Seq.sort
+        |> Seq.pairwise
+        |> Seq.forall (fun (a, b) -> a <= b)
+
+    Check.QuickThrowOnFailure orderedPairs
