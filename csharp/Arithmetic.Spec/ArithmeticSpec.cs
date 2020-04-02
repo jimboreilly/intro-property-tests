@@ -9,13 +9,6 @@ namespace Arithmetic.Spec
 {
     public class ArithmeticSpec
     {
-        private System.Random r = new System.Random();
-
-        private IEnumerable<int> nRandomInts(int n)
-        {
-            return Enumerable.Range(0, n).Select(x => r.Next());
-        }
-
         [Test]
         public void AdditionIsCommutative()
         {
